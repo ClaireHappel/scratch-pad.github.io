@@ -13,24 +13,38 @@
  * work?
  */
 
+// I: one input, a string
+// O: one output, input string's length
+// C:
+// E:
 function length(string) {
-  // YOUR CODE HERE //
+  // return the length of the string
+  return string.length;
 }
 
 /**
  * Given an input String, return a new String forced to lowercase.
  */
-
+// I: one input, a string
+// O: one output, the string lowercased
+// C: none
+// E: none
 function toLowerCase(string) {
-  // YOUR CODE HERE //
+  // return the string lowercased
+  return string.toLowerCase();
 }
 
 /**
  * Given an input String, return a new String forced to uppercase.
  */
 
+// I: one input, a string
+// O: one output, the string uppercased
+// C: none
+// E: none
 function toUpperCase(string) {
-  // YOUR CODE HERE //
+    // return the string uppercased
+    return string.toUpperCase();
 }
 
 /**
@@ -43,8 +57,14 @@ function toUpperCase(string) {
  * TIP: Solve this problem using a combination of split and join.
  *
  */
+
+// I: one input, a string 
+// O: one output, the string lowercased with a dash between words
+// C: use split and join to solve
+// E: none
 function toDashCase(string) {
-  // YOUR CODE HERE //
+// return the string split at each space, then joined with -, and finally lowercased
+return string.split(' ').join('-').toLowerCase();
 }
 
 /**
@@ -61,8 +81,13 @@ function toDashCase(string) {
  *
  */
 
+// I: two inputs, a string and a single character
+// O: one output, a boolean
+// C: none
+// E: none
 function beginsWith(string, char) {
-  // YOUR CODE HERE //
+      // if the start of string is either the char lowercased or uppercased, return true- if not, false
+        return string[0] === char || string[0] === char.toUpperCase();
 }
 
 /**
@@ -77,8 +102,13 @@ function beginsWith(string, char) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
+// I: two inputs, a string and a single character
+// O: one output, a boolean
+// C: none
+// E: none
 function endsWith(string, char) {
-  // YOUR CODE HERE //
+     //if the last char in string equals char or character lowercased, return true- if not, false
+     return string[string.length - 1] === char || string[string.length - 1] === char.toLowerCase();
 }
 
 /**
@@ -86,8 +116,13 @@ function endsWith(string, char) {
  *
  * TIP: What's the operator to concatenate two Strings?
  */
+// I: two inputs, both strings
+// O: one output, the strings joined
+// C: none
+// E: none
 function concat(stringOne, stringTwo) {
-  // YOUR CODE HERE //
+  // return the two strings concatenated
+  return stringOne + stringTwo;
 }
 
 /**
@@ -100,9 +135,16 @@ function concat(stringOne, stringTwo) {
  * TIP: This Function pulls out all the arguments passed to it and stores them
  *      in an Array called args.
  */
+
+// I: several inputs, an unspecified number of strings
+// O: one output, a string of all argument strings joined
+// C: use a storage array called args
+// E: none
 function join(stringOne, stringTwo) {
-  // YOUR CODE HERE //
-  var args = Array.from(arguments);
+  // init args to the value of an array made up of every argument 
+  let args = Array.from(arguments);
+  // return that array joined into a string with no seperation/spaces
+  return args.join('');
 }
 
 /**
@@ -114,9 +156,15 @@ function join(stringOne, stringTwo) {
  *
  * TIP: What property of the String do we need to compare?
  */
+// I: two inputs, both strings
+// O: one output, the larger string
+// C: none
+// E: none
 function longest(stringOne, stringTwo) {
-  // YOUR CODE HERE //
+// return stringOne if StringOne is longer, else return stringTwo
+return stringOne.length > stringTwo.length ? stringOne : stringTwo;
 }
+
 
 /**
  * Given two Strings, return 1 if the first string is higher in alphabetical order (meaning earlier in the alphabet) than
@@ -125,8 +173,13 @@ function longest(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+// I: two inputs, both strings
+// O: one output, an integer value depending on if the first or second string is higher in alphabetical order
+// C: none
+// E: none
 function sortAscending(stringOne, stringTwo) {
-  // YOUR CODE HERE //
+  // return the result of comparing if stringTwo is higher than stringOne
+  return stringTwo.localeCompare(stringOne);
 }
 
 /**
@@ -136,8 +189,13 @@ function sortAscending(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+// I: two inputs, both strings
+// O: one output, an integer value depending on if the first or second string is higher in lower in alphabetical order
+// C: none
+// E: none
 function sortDescending(stringOne, stringTwo) {
-  // YOUR CODE HERE //
+  // return the result of comparing if stringOne is higher than stringOne
+  return stringOne.localeCompare(stringTwo);
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
