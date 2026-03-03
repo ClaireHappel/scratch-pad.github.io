@@ -15,8 +15,8 @@
 
 // I: one input, a string
 // O: one output, input string's length
-// C:
-// E:
+// C: none
+// E: none
 function length(string) {
   // return the length of the string
   return string.length;
@@ -37,7 +37,6 @@ function toLowerCase(string) {
 /**
  * Given an input String, return a new String forced to uppercase.
  */
-
 // I: one input, a string
 // O: one output, the string uppercased
 // C: none
