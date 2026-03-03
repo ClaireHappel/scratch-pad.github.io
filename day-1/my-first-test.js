@@ -15,9 +15,13 @@
 /**
  * Given an input value, print the value to the screen using console.log().
  */
-
+//I one input, value
+//O none
+//C log value to console
+//E none
 function print(value) {
-  // YOUR CODE HERE //
+    //print value to console
+    console.log(value);
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
