@@ -14,8 +14,13 @@
  *
  * HINT: There is a method that can help with this.
  */
+// I: one input, any value
+// O: one output, a boolean describing if value is an array
+// C: use some sort of method (hint it's Array.isArray())
+// E: none
 function isArray(value) {
-  // YOUR CODE HERE //
+  // return true or false depending on if value is an array
+  return Array.isArray(value);
 }
 
 /**
@@ -32,8 +37,14 @@ function isArray(value) {
  * isObject([1, 2, 3]); // false
  *
  */
+// I: one input, a value of any kind
+// O: one output, a boolean that checks for an object that is a collection
+// C: use methods to weed out arrays, null, dates and other data types
+// E: none
 function isObject(value) {
-  // YOUR CODE HERE //
+ // if value is an array or null or an instance of date or it is not an object- return false, else true
+ return Array.isArray(value) || value === null || value instanceof Date || typeof value !== 'object' ? false : true;
+  
 }
 
 /**
@@ -42,8 +53,13 @@ function isObject(value) {
  *
  * TIP: Similar to isObject, but we must return true if the value is an Array.
  */
+// I: one input, a value of any kind
+// O: one output, a boolean that checks for an object that is a collection or an array
+// C: use methods to weed out null, dates, and other data types
+// E: none
 function isCollection(value) {
-  // YOUR CODE HERE //
+ // if value is null or an instance of date or it is not an object- return false, else true
+ return value === null || value instanceof Date || typeof value !== 'object' ? false : true;
 }
 
 /**
@@ -66,7 +82,23 @@ function isCollection(value) {
  *    typeOf([1,2,3]) -> "array"
  */
 function typeOf(value) {
-  // YOUR CODE HERE //
+  // if value is strictly equal to null
+  if (value === null) {
+    // return 'null'
+    return "null";
+  }
+ // if value is an array
+ if (Array.isArray(value)) {
+    // return 'array'
+    return "array";
+  }
+ // if value is a date
+ if (value instanceof Date) {
+    // return 'date'
+    return 'date';
+ }
+  // else return 
+  return typeof value;
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

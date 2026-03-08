@@ -22,7 +22,15 @@
  *  c. you'll wanna make use of the push() method of Array.
  */
 function range(start, end) {
-  // YOUR CODE HERE //
+  // init ranged to an object literal
+  let ranged = [];
+  // for start of start, stop dependent on start/end, step increment or decrement of one depending on start/end
+  for (let i = start; start < end ? i <= end : i >= end ; start < end ? i++ : i--){
+    // we push all values into ranged (either in standard or reversed order)
+    ranged.push(i);
+  }
+  // and then return ranged
+  return ranged;
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

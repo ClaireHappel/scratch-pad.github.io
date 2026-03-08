@@ -11,9 +11,16 @@
  * return a Function that tests whether a given value is greater than the
  * base.
  */
-
+// I: one input, a string or number called base
+// O: one output, a function that tests whether a value is greater than base
+// C: none
+// E: none
 function createGreaterThanFilter(base) {
-  // YOUR CODE HERE
+  // return a function with param value
+  return function (value) {
+    // that returns the result of comparing whether value is greater than base
+    return value > base;
+  }
 }
 
 /**
@@ -22,9 +29,16 @@ function createGreaterThanFilter(base) {
  * base. (test means return true or false)
  *
  */
-
+// I: one input, a string or a number
+// O: one output, a function that tests whether a value is less than base
+// C: none
+// E: none
 function createLessThanFilter(base) {
-  // YOUR CODE HERE
+  // return a function with a param value
+  return function (value) {
+    // that returns the result of comparing whether value is less than base
+    return value < base;
+  }
 }
 
 /**
@@ -34,9 +48,16 @@ function createLessThanFilter(base) {
  *
  * This function needs to be case insensitive.
  */
-
+// I: one input, a single character
+// O: one output, a function that tests whether a string starts with that character
+// C: function must be case insensitive
+// E: none
 function createStartsWithFilter(startsWith) {
-  // YOUR CODE HERE
+  // return function that takes one param, string
+  return function (string){
+    // that returns the result of checking if the first letter of string is the character in either upper or lower case
+    return string[0] === startsWith.toLowerCase() || string[0] === startsWith.toUpperCase();
+  }
 }
 
 /**
@@ -46,9 +67,16 @@ function createStartsWithFilter(startsWith) {
  *
  * This function needs to be case insensitive.
  */
-
+// I: one input, a single character
+// O: one output, a function that tests whether a string ends with that character
+// C: function must be case insensitive
+// E: none
 function createEndsWithFilter(endsWith) {
-  // YOUR CODE HERE //
+  // return function that takes one parameter, string
+  return function (string) {
+    // that returns the result of checking if the last letter of string is the character in either upper or lower case
+    return string[string.length - 1] === endsWith.toLowerCase() || string[string.length - 1] === endsWith.toUpperCase();
+  }
 }
 
 /**
@@ -67,8 +95,20 @@ function createEndsWithFilter(endsWith) {
  *    // returns => ['a!', 'b!']
  *
  */
+// I: two inputs, an array and a function
+// O: one ouput, the array modified by the function
+// C: use a for loop, use a storage array
+// E: none
 function modifyStrings(strings, modify) {
-  // YOUR CODE HERE
+  // init modded to an array literal
+  let modded = [];
+  // for start 0, stop less than strings.length, increment of 1
+  for (let i = 0; i < strings.length; i++){
+    // call modify on every string value, then push each modified string to modded
+    modded.push(modify(strings[i]))
+  }
+// return modded
+return modded
 }
 
 /**
@@ -88,9 +128,13 @@ function modifyStrings(strings, modify) {
  *    allStringsPass(['a', 'bb', 'c'], function(str) { return string.length === 1 });
  *    // returns => false
  */
-
+// I: two inputs, an array and a function
+// O: one output, a boolean testing whether all strings passed the function test
+// C: use a for loop
+// E: none
 function allStringsPass(strings, test) {
-  // YOUR CODE HERE //
+  // return true if each string passes the test function with true
+  return strings.every(test);
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
